@@ -23,4 +23,5 @@ class LoginPage:
     def submit_credentials(self, username: str, password: str) -> None:
         self._username.fill(username)
         self._password.fill(password)
+        expect(self._submit).to_be_enabled()
         self._submit.click()
