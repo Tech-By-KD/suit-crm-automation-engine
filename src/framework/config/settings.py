@@ -33,6 +33,22 @@ class ArtifactSettings(_Strict):
     traces: bool = True
 
 
+class ContactData(_Strict):
+    salutation: str = ""
+    first_name: str = ""
+    last_name: str
+    phone_work: str = ""
+    phone_mobile: str = ""
+    title: str = ""
+    department: str = ""
+    email: str = ""
+    address_street: str = ""
+    address_city: str = ""
+    address_state: str = ""
+    address_postalcode: str = ""
+    address_country: str = ""
+
+
 class Settings(_Strict):
     """Resolved configuration for one test run."""
 
@@ -43,6 +59,8 @@ class Settings(_Strict):
     browser: BrowserSettings = BrowserSettings()
     timeouts: Timeouts = Timeouts()
     artifacts: ArtifactSettings = ArtifactSettings()
+    contact: ContactData = ContactData(last_name="")
+    contact_edit: ContactData = ContactData(last_name="")
 
     @field_validator("base_url")
     @classmethod

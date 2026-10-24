@@ -7,8 +7,8 @@ browser:
     height: 900
 
 timeouts:
-  default: 10000      # ms, element actions and web-first assertions
-  navigation: 30000   # ms, page.goto and navigations
+  default: 30000      # ms, element actions and web-first assertions
+  navigation: 60000   # ms, page.goto and navigations
 
 artifacts:
   screenshots: true

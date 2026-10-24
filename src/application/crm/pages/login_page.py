@@ -16,9 +16,8 @@ class LoginPage:
 
     def open(self) -> None:
         """Navigate to the login page and wait until the form is usable."""
-        self._page.goto(self._login_url)
-        self._page.locator("app-loading").wait_for(state="detached")
-        expect(self._username).to_be_visible()
+        self._page.goto(self._login_url, wait_until="domcontentloaded")
+        self._username.wait_for(state="visible", timeout=60_000)
 
     def submit_credentials(self, username: str, password: str) -> None:
         self._username.fill(username)

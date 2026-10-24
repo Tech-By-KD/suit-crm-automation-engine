@@ -1,2 +1,32 @@
 # Environment-specific, non-secret settings. Override with CRM_BASE_URL if needed.
 base_url: "https://suite8demo.suiteondemand.com"
+
+contact:
+  salutation: "Mr."
+  first_name: "John"
+  last_name: "Doe"
+  phone_work: "555-100-2000"
+  phone_mobile: "555-100-3000"
+  title: "QA Engineer"
+  department: "Engineering"
+  email: "john.doe@example.com"
+  address_street: "123 Test Street"
+  address_city: "Austin"
+  address_state: "TX"
+  address_postalcode: "78701"
+  address_country: "USA"
+
+contact_edit:
+  salutation: "Dr."
+  first_name: "Jane"
+  last_name: "Smith"
+  phone_work: "555-200-3000"
+  phone_mobile: "555-200-4000"
+  title: "Senior QA Engineer"
+  department: "Quality Assurance"
+  email: "jane.smith@example.com"
+  address_street: "456 Updated Avenue"
+  address_city: "Dallas"
+  address_state: "TX"
+  address_postalcode: "75201"
+  address_country: "USA"

@@ -18,9 +18,11 @@ import pytest
 from dotenv import load_dotenv
 from playwright.sync_api import Browser, BrowserContext, Page, Playwright, expect, sync_playwright
 
+from application.crm.pages.contact_page import ContactPage
 from application.crm.pages.home_page import HomePage
 from application.crm.pages.login_page import LoginPage
 from application.crm.workflows.authentication_workflow import AuthenticationWorkflow
+from application.crm.workflows.contact_workflow import ContactWorkflow
 from framework.config.loader import ConfigError, load_settings
 from framework.config.settings import Settings
 from framework.reporting.artifact_manager import ArtifactManager
@@ -145,3 +147,13 @@ def home_page(page: Page, settings: Settings) -> HomePage:
 @pytest.fixture
 def auth_workflow(login_page: LoginPage, home_page: HomePage) -> AuthenticationWorkflow:
     return AuthenticationWorkflow(login_page, home_page)
+
+
+@pytest.fixture
+def contact_page(page: Page, settings: Settings) -> ContactPage:
+    return ContactPage(page, settings.base_url)
+
+
+@pytest.fixture
+def contact_workflow(page: Page, contact_page: ContactPage) -> ContactWorkflow:
+    return ContactWorkflow(page, contact_page)
