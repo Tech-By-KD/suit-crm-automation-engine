@@ -1,0 +1,2 @@
+# Environment-specific, non-secret settings. Override with CRM_BASE_URL if needed.
+base_url: "https://suite8demo.suiteondemand.com"

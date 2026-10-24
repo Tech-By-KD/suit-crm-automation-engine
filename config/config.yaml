@@ -1,0 +1,15 @@
+# Non-secret defaults. Credentials are NEVER stored here; use CRM_USERNAME / CRM_PASSWORD.
+browser:
+  name: chromium
+  headless: true
+  viewport:
+    width: 1440
+    height: 900
+
+timeouts:
+  default: 10000      # ms, element actions and web-first assertions
+  navigation: 30000   # ms, page.goto and navigations
+
+artifacts:
+  screenshots: true
+  traces: true
